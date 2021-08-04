@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>70mln.pl</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Quicksand&family=Ranchers&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div id="header">
+     <a href="index.html"><h1>70mln.pl</h1></a>
+     <h2>Kalkulator sasina</h2>
+    </div>
+    <div id="comput">
+     <input id="textbox" type="text">
+     <button id="button">Przelicz</button>
+    </div>
+    <ul id="answer"></ul>
+    <div id="hint">
+     <h4>Czy wiesz, że? </h4>
+     <h6>Jacek Sasin przejebał 70 milinów złotych na wybory, które się nie odbyły i nie poniósł za to żadnych konsekwencji.</h6>
+    </div>
+
+    <style>
+
+      body{
+        font-family: Quicksand;
+        text-align: center;
+        background: url("Jacek_Sasin.png");
+        background-size: 100px;
+        padding-bottom:2000px;
+      }
+
+      h1{
+        font-family: Ranchers;
+        font-size: 5em;
+        margin: 0px;
+        background: white;
+        color: black;
+      }
+
+      h1:hover{
+        color: rgb(77, 77, 77);
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+      h2{
+        font-family: Fira Sans;
+        margin: 0px;
+        padding: 0 0 5px 0;
+        background: white;
+      }
+
+      #comput{
+        background: white;
+        padding: 10px;
+        margin: 60px;
+        border: 3px solid black;
+        position: fixed;
+        top: 220px;
+        left: 10px;
+        right: 10px;
+      }
+
+      p{
+        background: white;
+        padding: 10px;
+        margin: 0px;
+        border: 3px solid black;
+        font-size: 1.6em;
+        position: fixed;
+        top: 400px;
+        left: 70px;
+        right: 70px;
+      }
+
+      #hint{
+        font-size: 2em;
+        background: white;
+        border: 5px solid black;
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+      }
+
+      #header{
+        border: 5px solid black;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+      }
+
+      h4 {
+        text-decoration: underline;
+        color: black;
+      }
+
+      h4:hover{
+        color: rgb(77, 77, 77);
+        transform: scale(1.1);
+      }
+
+      #button{
+        margin: 20px 10px;
+        padding: 12px 17px;
+        color: white;
+        border: none;
+        font-family: Fira Sans;
+        font-weight: 400;
+        background: rgb(89, 150, 255);
+        transition: background 200ms ease-in-out;
+      }
+
+        #button:hover{
+          background: rgb(147, 187, 255);
+          transform: scale(1.1);
+        }
+
+        #textbox{
+          height: 32px;
+          width: 300px;
+          font-size: 20px;
+          font-family: Fira Sans;
+          margin: 20px 10px;
+        }
+
+    </style>
+
+
+
+
+
+    <script type="text/javascript">
+
+      var textbox = document.getElementById("textbox");
+      var button = document.getElementById("button");
+      var value = document.getElementById("answer");
+
+      button.addEventListener("click", function(){
+        var answer = textbox.value/70000000;
+        var ans = (textbox.value + " = " + answer + " sasina");
+        var x = document.createElement("P");
+        var t = document.createTextNode(ans);
+        x.appendChild(t);
+        document.body.appendChild(x);
+        textbox.value = "";
+      });
+
+    </script>
+
+  </body>
+</html>
